@@ -1,0 +1,10 @@
+apply from: "../module_build.gradle"
+android {
+    //统一资源前缀，规范资源引用
+    resourcePrefix "main_"
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+}

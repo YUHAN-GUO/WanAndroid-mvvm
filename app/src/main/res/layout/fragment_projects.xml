@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="projectViewModel"
+            type="com.gthink.wanandroid.viewmodule.ProjectViewModel" />
+    </data>
+
+    <com.base.gyh.baselib.widgets.netstatae.NetStateLayout
+        android:id="@+id/project_stateLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/project_contentView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".view.fragment.ProjectsFragment">
+
+            <com.flyco.tablayout.SlidingTabLayout
+                android:id="@+id/project_tablayout"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dp_50"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tl_divider_color="@color/color_black"
+                app:tl_indicator_color="@color/color_blue"
+                app:tl_indicator_gravity="BOTTOM"
+                app:tl_indicator_height="@dimen/dp_2"
+                app:tl_indicator_style="NORMAL"
+                app:tl_indicator_width="@dimen/dp_30"
+                app:tl_textSelectColor="@color/color_black"
+                app:tl_textUnselectColor="@color/cp_color_gray" />
+
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/project_viewpager"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/project_tablayout" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.base.gyh.baselib.widgets.netstatae.NetStateLayout>
+</layout>

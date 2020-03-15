@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <item name="item_home_rlv_tv_niceDate" type="id" />
+    <item name="item_home_rlv_tv_author" type="id" />
+    <item name="item_home_rlv_img_collect" type="id" />
+    <item name="item_home_rlv_tv_title" type="id" />
+    <item name="item_home_rlv_tv_chapterName" type="id" />
+    <item name="home_toolbar_back" type="id" />
+    <item name="home_toolbar_menu" type="id" />
+    <item name="home_toolbar_title" type="id" />
+    <item name="item_knowledge_content" type="id" />
+    <item name="item_knowledge_title" type="id" />
+    <item name="item_knowledge_img" type="id" />
+    <item name="knowledge_article_mytoolbar" type="id" />
+    <item name="knowledge_article_tablayout" type="id" />
+    <item name="item_knowledge_childfragment_rlv_tv_niceDate" type="id" />
+    <item name="item_knowledge_childfragment_rlv_tv_author" type="id" />
+    <item name="item_knowledge_childfragment_rlv_img_collect" type="id" />
+    <item name="item_knowledge_childfragment_rlv_tv_title" type="id" />
+    <item name="item_knowledge_childfragment_rlv_tv_chapterName" type="id" />
+    <item name="item_project_child_rlv_img_collect" type="id" />
+    <item name="imageView2" type="id" />
+    <item name="item_project_child_rlv_tv_content" type="id" />
+    <item name="item_project_child_rlv_tv_niceDate" type="id" />
+    <item name="item_project_child_rlv_tv_author" type="id" />
+    <item name="item_project_child_rlv_tv_title" type="id" />
+    <item name="project_tablayout" type="id" />
+    <item name="loginRegisterToolbar" type="id" />
+    <item name="login_inputLayout_userName" type="id" />
+    <item name="login_toRegister" type="id" />
+    <item name="login_inputLayout_userPaw" type="id" />
+</resources>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="datasBean"
+            type="com.gthink.wanandroid.data.bean.ArticleDataBean.DatasBean"/>
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:elevation="@dimen/dp_4"
+        app:cardCornerRadius="@dimen/dp_5"
+        android:layout_marginBottom="@dimen/dp_5"
+        android:layout_marginLeft="@dimen/dp_5"
+        android:layout_marginRight="@dimen/dp_5"
+        android:layout_marginTop="@dimen/dp_5"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/item_home_rlv_tv_author"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="8dp"
+                android:text="@{datasBean.author}"
+                android:layout_marginRight="8dp"
+                app:layout_constraintEnd_toStartOf="@id/item_home_rlv_tv_niceDate"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/item_home_rlv_tv_niceDate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="24dp"
+                android:layout_marginRight="24dp"
+                android:gravity="right"
+                android:text="@{datasBean.niceDate}"
+                app:layout_constraintBottom_toBottomOf="@+id/item_home_rlv_tv_author"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/item_home_rlv_tv_author" />
+
+            <TextView
+                android:id="@+id/item_home_rlv_tv_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@{datasBean.title}"
+                app:layout_constraintEnd_toEndOf="@+id/item_home_rlv_tv_niceDate"
+                app:layout_constraintStart_toStartOf="@id/item_home_rlv_tv_author"
+                app:layout_constraintTop_toBottomOf="@id/item_home_rlv_tv_author" />
+
+            <TextView
+                android:id="@+id/item_home_rlv_tv_chapterName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="8dp"
+                android:text="@{datasBean.chapterName}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/item_home_rlv_img_collect"
+                app:layout_constraintStart_toStartOf="@id/item_home_rlv_tv_title"
+                app:layout_constraintTop_toBottomOf="@id/item_home_rlv_tv_title" />
+
+            <ImageView
+                android:id="@+id/item_home_rlv_img_collect"
+                android:layout_width="wrap_content"
+                android:src="@drawable/ic_favorite_border"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                app:layout_constraintBottom_toBottomOf="@id/item_home_rlv_tv_chapterName"
+                app:layout_constraintEnd_toEndOf="@id/item_home_rlv_tv_niceDate"
+                app:layout_constraintTop_toTopOf="@id/item_home_rlv_tv_chapterName"
+                />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+</layout>
