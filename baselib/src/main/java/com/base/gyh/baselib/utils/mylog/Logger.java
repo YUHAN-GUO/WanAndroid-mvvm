@@ -20,6 +20,7 @@ public class Logger {
     private static final String SIMPLE_PREFIX = "[(%s:%d)#%s()] ->  ";
     private static final String MORE_DETAIL_PREFIX = "at %s.%s(%s:%d)";
     private static final StringBuffer mMessageBuffer = new StringBuffer();
+    private static String myFormat = "WanAndroidMvvm-----------------%s";
     private static String PRIVATE_TAG = "WanAndroid";
     private static String PUBLIC_TAG = "WanAndroid";
     private static boolean mDebugable = true;
@@ -79,6 +80,18 @@ public class Logger {
         }else{
             if(DEBUG_D){
                 log(Log.DEBUG,buildPrivateMessage(null,format, args));
+            }
+        }
+
+    }
+
+    public static synchronized void dd(Object... args) {
+
+        if(mDebugable){
+            log(Log.DEBUG,buildPrivateMessage(null,myFormat, args));
+        }else{
+            if(DEBUG_D){
+                log(Log.DEBUG,buildPrivateMessage(null,myFormat, args));
             }
         }
 

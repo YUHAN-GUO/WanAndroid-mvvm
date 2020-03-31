@@ -1,5 +1,6 @@
 package com.library.library_base.model;
 
+import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;
 
@@ -42,7 +43,9 @@ public abstract class SuperBaseModel<T> {
 
     public SuperBaseModel() {
         mReferenceQueue = new ReferenceQueue<>();
-        mWeakReferenceDeque = new ConcurrentLinkedDeque<>();
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            mWeakReferenceDeque = new ConcurrentLinkedDeque<>();
+        }
     }
 
     /**
@@ -61,10 +64,12 @@ public abstract class SuperBaseModel<T> {
                 mWeakReferenceDeque.remove(releaseListener);
             }
             // 如果列队中 还存在此对象,就不用再次注册了
-            for (WeakReference<IBaseModelListener> weakListener : mWeakReferenceDeque) {
-                IBaseModelListener listenerItem = weakListener.get();
-                if (listenerItem == listener) {
-                    return;
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                for (WeakReference<IBaseModelListener> weakListener : mWeakReferenceDeque) {
+                    IBaseModelListener listenerItem = weakListener.get();
+                    if (listenerItem == listener) {
+                        return;
+                    }
                 }
             }
             // 注册此listener对象
@@ -85,11 +90,13 @@ public abstract class SuperBaseModel<T> {
             return;
         }
         synchronized (this) {
-            for (WeakReference<IBaseModelListener> weakListener : mWeakReferenceDeque) {
-                IBaseModelListener listenerItem = weakListener.get();
-                if (listenerItem == listener) {
-                    mWeakReferenceDeque.remove(weakListener);
-                    break;
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                for (WeakReference<IBaseModelListener> weakListener : mWeakReferenceDeque) {
+                    IBaseModelListener listenerItem = weakListener.get();
+                    if (listenerItem == listener) {
+                        mWeakReferenceDeque.remove(weakListener);
+                        break;
+                    }
                 }
             }
         }

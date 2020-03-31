@@ -28,7 +28,7 @@ import com.library.library_base.viewmodel.IMvvmBaseViewModel;
  * @since 2020-01-27
  */
 public abstract class MvvmBaseActivity<V extends ViewDataBinding, VM extends IMvvmBaseViewModel>
-        extends AppCompatActivity implements IBaseView {
+        extends BaseActivity implements IBaseView {
 
     protected VM viewModel;
 

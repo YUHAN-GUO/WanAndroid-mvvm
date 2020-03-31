@@ -1,1 +1,1 @@
-include ':app', ':baselib', ':library_common', ':library_network', ':module_main', ':library_base'
+include ':app', ':baselib', ':library_common', ':library_network', ':module_main', ':library_base', ':module_home', ':module_user'

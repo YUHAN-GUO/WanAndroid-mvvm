@@ -36,7 +36,7 @@ import java.util.List;
  * @author darryrzhoong
  * @since 2020-01-28
  */
-public abstract class MvvmLazyFragment<V extends ViewDataBinding, VM extends IMvvmBaseViewModel> extends Fragment implements IBaseView {
+public abstract class MvvmLazyFragment<V extends ViewDataBinding, VM extends IMvvmBaseViewModel> extends SupportFragment implements IBaseView {
     protected V viewDataBinding;
 
     protected VM viewModel;

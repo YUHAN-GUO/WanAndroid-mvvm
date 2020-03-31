@@ -34,7 +34,7 @@ import com.library.library_base.viewmodel.IMvvmBaseViewModel;
  * @since 2020-01-27
  */
 public abstract class MvvmBaseFragment<V extends ViewDataBinding, VM extends IMvvmBaseViewModel>
-        extends Fragment implements IBaseView {
+        extends SupportFragment implements IBaseView {
     protected V viewDataBinding;
 
     protected VM viewModel;
